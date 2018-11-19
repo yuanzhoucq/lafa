@@ -3,7 +3,7 @@
 
 module.exports = {
   apps: [{
-    name: "app",
+    name: "lafa",
     script: "./server.js",
     env: {
       NODE_ENV: "production",
