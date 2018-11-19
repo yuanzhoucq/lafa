@@ -2,6 +2,7 @@ const {createReadStream} = require('fs');
 const Router = require('koa-router');
 const HelloController = require("./controllers/HelloController");
 const {login, getUser} = require("./controllers/AuthController");
+const ObjectController = require("./controllers/ObjectController");
 
 const router = new Router();
 
@@ -17,5 +18,14 @@ router.get("/s", async (ctx) => {
   ctx.type = 'html';
   ctx.body = createReadStream('./socket.html');
 });
+
+//lost and found objects
+const objects = new Router();
+objects.post("/", ObjectController.publishNewObject);
+objects.get("/", ObjectController.getAllObjects);
+objects.post("/toggleObjectState", ObjectController.toggleObjectState);
+
+
+router.use("/objects", objects.routes(), objects.allowedMethods());
 
 module.exports = router;

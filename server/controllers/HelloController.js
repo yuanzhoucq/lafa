@@ -1,6 +1,5 @@
 const HelloModel = require("../models/HelloModel");
 
-
 const BaseController = require('./BaseController');
 
 class HelloController extends BaseController {
