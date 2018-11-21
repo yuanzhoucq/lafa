@@ -32,7 +32,7 @@ let Config = {
 };
 
 if (process.env.NODE_ENV === "production") {
-  Config.database.url = "";
+  Config.database.url = "mongodb://localhost:27017/lafa";
   Config.server.port = 5000
 }
 
