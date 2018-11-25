@@ -16,7 +16,7 @@ router.get("/getuser", getUser);
 router.post("/code2id", async (ctx) => {
   const code = ctx.request.body.code;
   const res = await getSessionKeyAndOpenID(code);
-  return res || {error: "Getting id fails."}
+  ctx.body = res || {error: "Getting id fails."}
 });
 
 
