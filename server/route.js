@@ -3,6 +3,7 @@ const Router = require('koa-router');
 const HelloController = require("./controllers/HelloController");
 const {login, getUser} = require("./controllers/AuthController");
 const ObjectController = require("./controllers/ObjectController");
+const {getSessionKeyAndOpenID} = require("./helpers/WeChat");
 
 const router = new Router();
 
@@ -11,6 +12,8 @@ router.get("/", (ctx) => HelloController.sayHelloWorld(ctx));
 
 router.post("/login", login);
 router.get("/getuser", getUser);
+
+router.get("/code2id", getSessionKeyAndOpenID);
 
 
 //socket debug
