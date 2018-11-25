@@ -13,7 +13,10 @@ router.get("/", (ctx) => HelloController.sayHelloWorld(ctx));
 router.post("/login", login);
 router.get("/getuser", getUser);
 
-router.get("/code2id", getSessionKeyAndOpenID);
+router.post("/code2id", async (ctx) => {
+  const code = ctx.request.body.code;
+  return await getSessionKeyAndOpenID(code)
+});
 
 
 //socket debug
