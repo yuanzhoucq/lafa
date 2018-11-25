@@ -4,6 +4,7 @@ class ObjectModel extends BaseModel {
   constructor() {
     const structure = {
       title: String,
+      userId: String,
       imgUrl: String,
       location: String,
       description: String,
