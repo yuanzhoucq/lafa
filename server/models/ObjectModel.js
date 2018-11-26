@@ -6,6 +6,7 @@ class ObjectModel extends BaseModel {
       title: String,
       userId: String,
       imgUrl: String,
+      date: { type: Date, default: Date.now },
       location: String,
       description: String,
       returned: {type: Boolean, default: false},
