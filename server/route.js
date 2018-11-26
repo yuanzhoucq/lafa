@@ -30,6 +30,7 @@ router.get("/s", async (ctx) => {
 const objects = new Router();
 objects.post("/", ObjectController.publishNewObject);
 objects.get("/", ObjectController.getAllObjects);
+objects.post("/objectsByUserId", ObjectController.getObjectsByUserId);
 objects.post("/toggleObjectState", ObjectController.toggleObjectState);
 
 

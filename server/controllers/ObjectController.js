@@ -14,10 +14,12 @@ class ObjectController extends BaseController {
     ctx.body = objects || "error";
   }
 
+  async getObjectsByUserId(ctx) {
+    ctx.body = (await ObjectModel.getObjectsByUserId(ctx.request.body.userId)) || "error";
+  }
+
   async toggleObjectState(ctx) {
-    if (ObjectModel.toggleObject(ctx.request.body.id))
-      ctx.body = "ok";
-    else ctx.body = "error"
+    ctx.body = (await ObjectModel.toggleObject(ctx.request.body.id)) ? "ok" : "error";
   }
 
 }

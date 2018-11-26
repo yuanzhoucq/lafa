@@ -24,6 +24,15 @@ class ObjectModel extends BaseModel {
     }
   }
 
+  async getObjectsByUserId(userId) {
+    try {
+      return await this.model.find({userId})
+    } catch (err) {
+      this.logger.debug(`Getting objects by userId of ${super.name} failed: `, err);
+      return false
+    }
+  }
+
   async toggleObject(id) {
     try {
       const objectState = await this.model.findById(id, "returned");
