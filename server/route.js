@@ -13,7 +13,7 @@ router.get("/", (ctx) => HelloController.sayHelloWorld(ctx));
 router.post("/login", login);
 router.get("/getuser", getUser);
 router.get("/notification", async (ctx) => {
-  ctx.body = "如有使用问题，请与我们联系。"
+  ctx.body = "发测试图片的朋友们，试一试玩一玩就在个人中心里隐藏掉图片吧～"
 });
 
 router.post("/code2id", async (ctx) => {
